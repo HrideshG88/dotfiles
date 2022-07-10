@@ -136,6 +136,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     --
     -- , ((modm              , xK_b     ), sendMessage ToggleStruts)
 
+    , ((modm              , xK_f     ), toggleFull)
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
 
@@ -215,6 +216,11 @@ myLayout =avoidStruts
      -- Percent of screen to increment by when resizing panes
      delta   = 3/100
 
+toggleFull = withFocused (\windowId -> do
+    { floats <- gets (W.floating . windowset);
+        if windowId `M.member` floats
+        then withFocused $ windows . W.sink
+        else withFocused $ windows . (flip W.float $ W.RationalRect 0 0 1 1) }) 
 ------------------------------------------------------------------------
 -- Window rules:
 
@@ -265,7 +271,7 @@ myLogHook = return ()
 -- By default, do nothing.
 myStartupHook = do
       spawnOnce "picom &"
-      spawnOnce "new.sh"
+      spawnOnce "newq"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
@@ -355,4 +361,4 @@ help = unlines ["The default modifier key is 'alt'. Default keybindings:",
     "-- Mouse bindings: default actions bound to mouse events",
     "mod-button1  Set the window to floating mode and move by dragging",
     "mod-button2  Raise the window to the top of the stack",
-    "mod-button3  Set the window to floating mode and resize by dragging"]
+    "pspsmod-button3  Set the window to floating mode and resize by dragging"]
