@@ -1,0 +1,6 @@
+#!/sbin/bash
+
+wal -q -i Pictures/wallpapers/ && pywalfox update
+cd ~/alacritty-color-export && ./script.sh
+
+
