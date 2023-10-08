@@ -1,8 +1,11 @@
-# dotfiles
+<h1 align=center>Dotfiles</h1>
 
-Dotfiles for ricing fresh Arch install.
+<h2 align=center>Dotfiles for ricing fresh Arch install.
+<p align=center>
+  <img src="https://img.shields.io/badge/OS-linux-orange.svg?style=flat-square">
+</p>
+</h2>
 
-**XMONAD SHOWCASE**
+<h3 align=center>XMONAD SHOWCASE</h3>
 
-https://github.com/HrideshG88/dotfiles/assets/37382537/ad3bbd55-8c23-4464-afd6-057afabdaae4
-
+[compressed_xmrice.webm](https://github.com/HrideshG88/dotfiles/assets/37382537/677b2fe2-aa0e-4854-a00c-eec973698dfe)
